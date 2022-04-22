@@ -3,7 +3,7 @@ import numpy as np
 from PIL import Image
 from keras.preprocessing import image
 
-model = tf.keras.models.load_model('translearnresnetmodel.h5')
+model = tf.keras.models.load_model('re_originaltranslearnresnetmodel.h5.h5')
 
 def preprocess_image(img, target_size):
   if img.mode != "RGB":
