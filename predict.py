@@ -8,6 +8,7 @@ model = tf.keras.models.load_model('translearnresnetmodel.h5')
 def preprocess_image(img, target_size):
   if img.mode != "RGB":
       img = img.convert("RGB")
+  
 
   img = img.resize(target_size)
   img = image.img_to_array(img)
@@ -21,7 +22,7 @@ def predict(data):
   processed_image = preprocess_image(img, target_size=(150,150))
 
   images = np.vstack([processed_image])
-  classes = model.predict(images, batch_size=10)
+  classes = model.predict(images)
 
   #return f"output = ({classes}%"
     #label = np.where(classes[0] > 0.5, 1, 0)
